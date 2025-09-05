@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
 
         // Generate JWT Token
         const token = jwt.sign(
-            { id: user.id, role: user.role },
+            { id: user.id, role: user.role,email: user.email },
             "mysecretkey",   // ⚠️ ye later .env file me dalenge
             { expiresIn: "1h" }
         );
@@ -65,6 +65,8 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+
 
 // -------------------------
 // Export Router

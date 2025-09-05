@@ -20,6 +20,12 @@ app.use('/projects', projectRoutes);
 //bug route
 const bugRoutes = require('./routes/bug.js');
 app.use('/bugs', bugRoutes);
+//user route
+const userRoutes = require("./routes/user.js");
+app.use("/users", userRoutes);
+
+
+
 
 
 
